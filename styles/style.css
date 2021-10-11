@@ -1,0 +1,25 @@
+* {
+    --color-1: #fefffe;
+    --color-2: #dddddc;
+    --color-3: #ec2c04;
+    --color-4: #67a4ee;
+    --color-5: #ebab4b;
+    --color-6: #64c363;
+}
+
+img {
+    width: 200px;
+}
+
+p {
+    text-align: center;
+}
+
+.product-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid black;
+    width: 250px;
+    padding: 10px;
+}
