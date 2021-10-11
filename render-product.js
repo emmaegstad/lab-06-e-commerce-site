@@ -1,6 +1,7 @@
 export function renderProduct(product) {
     const productCard = document.createElement('div');
     productCard.classList.add('product-card');
+    productCard.style.backgroundColor = `#${product.background}`;
 
     const productName = document.createElement('h2');
     productName.textContent = product.name;

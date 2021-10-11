@@ -6,6 +6,7 @@ export const products = [
         category: 'Products',
         price: 6,
         id: '1',
+        background: '67a4ee',
     },
     {
         name: 'Lavender Lip Balm',
@@ -15,6 +16,7 @@ export const products = [
         category: 'Products',
         price: 3,
         id: '2',
+        background: 'ebab4b',
     },
     {
         name: 'Peppermint Lip Balm',
@@ -24,6 +26,7 @@ export const products = [
         category: 'Products',
         price: 3,
         id: '3',
+        background: '64c363',
     },
     {
         name: 'Soothing Salve',
@@ -33,6 +36,7 @@ export const products = [
         category: 'Products',
         price: 5,
         id: '4',
+        background: '67a4ee',
     },
     {
         name: 'Honeybee Stickers',
@@ -42,6 +46,7 @@ export const products = [
         category: 'Products',
         price: 4,
         id: '5',
+        background: 'ebab4b',
     },
     {
         name: 'Solitary Bee Stickers',
@@ -51,5 +56,6 @@ export const products = [
         category: 'Products',
         price: 4,
         id: '6',
+        background: '64c363',
     },
 ];
