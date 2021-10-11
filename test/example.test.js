@@ -1,18 +1,15 @@
-// IMPORT MODULES under test here:
-// import { example } from '../example.js';
+import { renderProduct } from '../render-product.js';
+import { products } from '../products.js';
 
 const test = QUnit.test;
 
-test('time to test a function', (expect) => {
-    //Arrange
-    // Set up your arguments and expectations
-    const expected = true;
-    
-    //Act 
-    // Call the function you're testing and set the result to a const
-    const actual = true;
+test('renderProduct should return HTML element', (expect) => {
+    const expected =
+        '<div class="product-card"><h2>Wildflower Honey</h2><img src="./assets/product-photos/wildflower-honey.jpeg"><p>2oz jar of wildflower honey from Sauvie Island.</p><p>Category: Products</p><p>$6.00</p><button value="1">Add to Cart</button></div>';
 
-    //Expect
-    // Make assertions about what is expected versus the actual result
+    const honey = products[0];
+
+    const actual = renderProduct(honey).outerHTML;
+
     expect.equal(actual, expected);
 });

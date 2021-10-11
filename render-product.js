@@ -12,10 +12,10 @@ export function renderProduct(product) {
     productDesc.textContent = product.description;
 
     const productCat = document.createElement('p');
-    productCat.textContent = product.category;
+    productCat.textContent = `Category: ${product.category}`;
 
     const productPrice = document.createElement('p');
-    productPrice.textContent = product.price;
+    productPrice.textContent = `$${product.price}.00`;
 
     const productButton = document.createElement('button');
     productButton.textContent = 'Add to Cart';

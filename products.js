@@ -13,7 +13,7 @@ export const products = [
         description:
             'Handmade beeswax lip balm infused with lavender and chamomile.',
         category: 'Products',
-        price: 2.5,
+        price: 3,
         id: '2',
     },
     {
@@ -22,7 +22,7 @@ export const products = [
         description:
             'Handmade beeswax lip balm infused with peppermint and calendula.',
         category: 'Products',
-        price: 2.5,
+        price: 3,
         id: '3',
     },
     {
