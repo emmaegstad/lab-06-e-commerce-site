@@ -53,15 +53,3 @@ export const products = [
         id: '6',
     },
 ];
-
-/* <h2 class="product-name">Wildflower Honey</h2>
-<img
-    src="./assets/Product Photos/Product-1.jpeg"
-    alt="A 2 ounce jar of Bee & Bloom wildflower honey."
-/>
-<p class="product-description">
-    2oz jar of wildflower honey from Sauvie Island.
-</p>
-<p class="product-category">Product</p>
-<p class="product-price">$5.00</p>
-<button class="product-add" value="1">Add to Cart</button> */
