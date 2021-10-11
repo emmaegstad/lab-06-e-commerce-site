@@ -18,6 +18,7 @@ export function renderProduct(product) {
     productPrice.textContent = product.price;
 
     const productButton = document.createElement('button');
+    productButton.textContent = 'Add to Cart';
     productButton.value = product.id;
 
     productCard.append(
