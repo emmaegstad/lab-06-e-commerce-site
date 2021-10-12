@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Cart</title>
+        <link rel="stylesheet" href="../styles/reset.css" />
+        <link rel="stylesheet" href="../styles/style.css" />
+        <link rel="stylesheet" href="../styles/cart.css" />
+    </head>
+    <body>
+        <div class="top-bar">
+            Local honey and beeswax made with love in Portland, OR
+        </div>
+        <header>
+            <img
+                src="../assets/LogoMark.png"
+                alt="Bee & Bloom logo"
+                class="logo-mark icon"
+            />
+            <img class="logo" src="../assets/Logo.png" alt="Bee & Bloom logo" />
+            <a href="../index.html" class="home-link">
+                <img
+                    src="../assets/home-icon.png"
+                    alt="Home page icon"
+                    class="cart icon"
+            /></a>
+        </header>
+        <main class="cart-section">
+            <table>
+                <thead>
+                    <th>Product</th>
+                    <th>Price</th>
+                    <th>Qty</th>
+                    <th>Total</th>
+                </thead>
+                <tbody id="table-body"></tbody>
+                <tfoot>
+                    <td></td>
+                    <td></td>
+                    <td>Order Total:</td>
+                    <td id="order-total">TBC</td>
+                </tfoot>
+            </table>
+            <button class="place-order">Place Order</button>
+        </main>
+
+        <script type="module" src="./cart.js" defer></script>
+    </body>
+</html>

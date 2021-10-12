@@ -1,5 +1,5 @@
 import { renderProduct } from './render-product.js';
-import { products } from './products.js';
+import { products } from './data/products.js';
 
 const productList = document.querySelector('.product-list');
 

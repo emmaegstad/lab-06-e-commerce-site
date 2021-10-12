@@ -1,5 +1,7 @@
+import { products } from '../data/products.js';
+import { cart } from '../data/cart-data.js';
 import { renderProduct } from '../render-product.js';
-import { products } from '../products.js';
+import { findById, renderLineItem, calcOrderTotal } from '../utils.js';
 
 const test = QUnit.test;
 
@@ -10,6 +12,39 @@ test('renderProduct should return HTML element', (expect) => {
     const honey = products[0];
 
     const actual = renderProduct(honey).outerHTML;
+
+    expect.equal(actual, expected);
+});
+
+test('findById should return the product with matching ID', (expect) => {
+    const expected = {
+        name: 'Wildflower Honey',
+        img: './assets/product-photos/wildflower-honey.jpeg',
+        description: '2oz jar of wildflower honey from Sauvie Island.',
+        category: 'Products',
+        price: 6,
+        id: '1',
+        background: '67a4ee',
+    };
+
+    const actual = findById('1', products);
+
+    expect.deepEqual(actual, expected);
+});
+
+test('renderLineItem should return HTML element', (expect) => {
+    const expected =
+        '<tr><td>Wildflower Honey</td><td>6</td><td>5</td><td>$30.00</td></tr>';
+
+    const actual = renderLineItem(cart[0], findById('1', products)).outerHTML;
+
+    expect.equal(actual, expected);
+});
+
+test('calcOrderTotal should tally line item totals', (expect) => {
+    const expected = 42;
+
+    const actual = calcOrderTotal(cart, products);
 
     expect.equal(actual, expected);
 });

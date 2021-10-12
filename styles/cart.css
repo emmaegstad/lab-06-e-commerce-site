@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond&family=Forum&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@100&display=swap');
+
+* {
+    --display-font: 'EB Garamond', serif;
+    --body-font: 'Forum', cursive;
+    --mono-font: 'Noto Sans Mono', monospace;
+    --color-2: #dddddc;
+    --color-3: #ec2c04;
+    --color-4: #67a4ee;
+    --color-5: #ebab4b;
+    --color-6: #64c363;
+}
+
+.cart-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+table {
+    font-family: var(--display-font);
+    font-size: 3vh;
+    border: 2px solid var(--color-3);
+    border-collapse: collapse;
+    text-align: left;
+    margin-top: 4vh;
+}
+
+thead {
+    background-color: var(--color-3);
+    color: white;
+}
+
+th,
+td {
+    padding: 10px;
+}
+
+#table-body {
+    font-family: var(--mono-font);
+    font-size: 2vh;
+}
+
+.place-order {
+    margin: 5vh;
+    width: 10vw;
+    height: 5vh;
+    font-size: 1.2vw;
+}
