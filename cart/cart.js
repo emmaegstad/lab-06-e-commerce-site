@@ -1,6 +1,6 @@
 import { findById, renderLineItem, updateOrderTotal } from '../utils.js';
-import { cart } from '../data/cart-data.js';
-import { products } from '../data/products.js';
+import { cart } from '../banana/cart-data.js';
+import { products } from '../banana/products.js';
 
 const tbody = document.getElementById('table-body');
 
