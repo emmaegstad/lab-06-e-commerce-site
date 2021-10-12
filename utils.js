@@ -1,8 +1,6 @@
 import { cart } from '../data/cart-data.js';
 import { products } from '../data/products.js';
 
-export const tableBody = document.getElementById('table-body');
-
 export function findById(id, array) {
     for (let item of array) {
         if (id === item.id) {
@@ -11,31 +9,31 @@ export function findById(id, array) {
     }
 }
 
-// export function createDomElements() {
+export function toUSD(number) {
+    return number.toLocaleString('en-us', {
+        style: 'currency',
+        currency: 'USD',
+    });
+}
 
-// }
+export function renderLineItem(cartItem, productData) {
+    const tr = document.createElement('tr');
 
-export function domRender(tBody) {
-    for (let cartItem of cart) {
-        const productData = findById(cartItem.id, products);
+    const tdName = document.createElement('td');
+    tdName.textContent = productData.name;
 
-        const tr = document.createElement('tr');
-        const tdName = document.createElement('td');
-        tdName.textContent = productData.name;
-        const tdPrice = document.createElement('td');
-        tdPrice.textContent = productData.price;
-        const tdQty = document.createElement('td');
-        tdQty.textContent = cartItem.qty;
-        const tdTotal = document.createElement('td');
-        tdTotal.textContent = `$${cartItem.qty * productData.price}.00`;
+    const tdPrice = document.createElement('td');
+    tdPrice.textContent = productData.price;
 
-        tr.append(tdName, tdPrice, tdQty, tdTotal);
-        tBody.appendChild(tr);
-    }
+    const tdQty = document.createElement('td');
+    tdQty.textContent = cartItem.qty;
 
-    updateOrderTotal();
+    const tdTotal = document.createElement('td');
+    tdTotal.textContent = `$${cartItem.qty * productData.price}.00`;
 
-    return tBody;
+    tr.append(tdName, tdPrice, tdQty, tdTotal);
+
+    return tr;
 }
 
 export function calcOrderTotal(cart, products) {
@@ -49,5 +47,5 @@ export function calcOrderTotal(cart, products) {
 
 export function updateOrderTotal() {
     const orderTotalText = document.getElementById('order-total');
-    orderTotalText.textContent = `$${calcOrderTotal(cart, products)}.00`;
+    orderTotalText.textContent = toUSD(calcOrderTotal(cart, products));
 }

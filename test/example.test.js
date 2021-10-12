@@ -1,7 +1,8 @@
-import { renderProduct } from '../render-product.js';
 import { products } from '../data/products.js';
+import { cart } from '../data/cart-data.js';
+import { renderProduct } from '../render-product.js';
 import { findById } from '../utils.js';
-import { domRender } from '../utils.js';
+import { renderLineItem } from '../utils.js';
 
 const test = QUnit.test;
 
@@ -32,12 +33,11 @@ test('findById should return the product with matching ID', (expect) => {
     expect.deepEqual(actual, expected);
 });
 
-test('domRender should return HTML element', (expect) => {
-    const tableBody = document.createElement('tbody');
+test('renderLineItem should return HTML element', (expect) => {
     const expected =
-        '<tbody><tr><td>Wildflower Honey</td><td>6</td><td>5</td><td>$30.00</td></tr></tbody>';
+        '<tr><td>Wildflower Honey</td><td>6</td><td>5</td><td>$30.00</td></tr>';
 
-    const actual = domRender(tableBody).outerHTML;
+    const actual = renderLineItem(cart[0], findById('1', products)).outerHTML;
 
     expect.equal(actual, expected);
 });

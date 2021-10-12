@@ -1,5 +1,15 @@
-import { domRender, tableBody, calcOrderTotal } from '../utils.js';
+import { findById, renderLineItem, updateOrderTotal } from '../utils.js';
 import { cart } from '../data/cart-data.js';
 import { products } from '../data/products.js';
 
-domRender(tableBody);
+const tbody = document.getElementById('table-body');
+
+for (let cartItem of cart) {
+    const productData = findById(cartItem.id, products);
+
+    const tr = renderLineItem(cartItem, productData);
+
+    tbody.appendChild(tr);
+}
+
+updateOrderTotal();
