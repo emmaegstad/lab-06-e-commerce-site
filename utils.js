@@ -11,6 +11,10 @@ export function findById(id, array) {
     }
 }
 
+// export function createDomElements() {
+
+// }
+
 export function domRender(tBody) {
     for (let cartItem of cart) {
         const productData = findById(cartItem.id, products);
@@ -28,5 +32,22 @@ export function domRender(tBody) {
         tr.append(tdName, tdPrice, tdQty, tdTotal);
         tBody.appendChild(tr);
     }
+
+    updateOrderTotal();
+
     return tBody;
+}
+
+export function calcOrderTotal(cart, products) {
+    let orderTotal = 0;
+    for (let item of cart) {
+        const product = findById(item.id, products);
+        orderTotal = orderTotal + product.price * item.qty;
+    }
+    return orderTotal;
+}
+
+export function updateOrderTotal() {
+    const orderTotalText = document.getElementById('order-total');
+    orderTotalText.textContent = `$${calcOrderTotal(cart, products)}.00`;
 }

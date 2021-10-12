@@ -34,7 +34,7 @@ header {
     align-items: center;
     font-family: var(--display-font);
     font-size: 3vw;
-    margin: 2vw;
+    margin: 5vh 0 10vh 0;
 }
 
 .icon {
@@ -76,6 +76,7 @@ p {
     display: flex;
     flex-direction: column;
     align-items: center;
+    flex-basis: 25%;
     width: 250px;
     padding: 10px;
 }
