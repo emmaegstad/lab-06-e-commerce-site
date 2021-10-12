@@ -1,8 +1,7 @@
 import { products } from '../data/products.js';
 import { cart } from '../data/cart-data.js';
 import { renderProduct } from '../render-product.js';
-import { findById } from '../utils.js';
-import { renderLineItem } from '../utils.js';
+import { findById, renderLineItem, calcOrderTotal } from '../utils.js';
 
 const test = QUnit.test;
 
@@ -38,6 +37,14 @@ test('renderLineItem should return HTML element', (expect) => {
         '<tr><td>Wildflower Honey</td><td>6</td><td>5</td><td>$30.00</td></tr>';
 
     const actual = renderLineItem(cart[0], findById('1', products)).outerHTML;
+
+    expect.equal(actual, expected);
+});
+
+test('calcOrderTotal should tally line item totals', (expect) => {
+    const expected = 42;
+
+    const actual = calcOrderTotal(cart, products);
 
     expect.equal(actual, expected);
 });
