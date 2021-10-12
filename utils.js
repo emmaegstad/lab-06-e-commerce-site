@@ -1,5 +1,5 @@
-import { cart } from '../data/cart-data.js';
-import { products } from '../data/products.js';
+import { cart } from '../banana/cart-data.js';
+import { products } from '../banana/products.js';
 
 export function findById(id, array) {
     for (let item of array) {
