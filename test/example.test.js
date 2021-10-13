@@ -1,7 +1,7 @@
 import { products } from '../banana/products.js';
 import { cart } from '../banana/cart-data.js';
 import { renderProduct } from '../render-product.js';
-import { findById, renderLineItem, calcOrderTotal } from '../utils.js';
+import { findById, renderLineItem, calcOrderTotal, getCart } from '../utils.js';
 
 const test = QUnit.test;
 
@@ -48,3 +48,36 @@ test('calcOrderTotal should tally line item totals', (expect) => {
 
     expect.equal(actual, expected);
 });
+
+test('getCart should return the cart if it exists', (expect) => {
+    //arrange
+    const fakeCart = [
+        { id: '1', qty: 2 },
+        { id: '2', qty: 1 },
+    ];
+    localStorage.setItem('CART', JSON.stringify(fakeCart));
+
+    //act
+    const cart = getCart();
+
+    //assert
+    expect.deepEqual(cart, fakeCart);
+});
+
+test('getCart should return an empty array if no cart exists', (expect) => {
+    //arrange
+    localStorage.removeItem('CART');
+    const fakeCart = [];
+
+    //act
+    const cart = getCart();
+
+    //assert
+    expect.deepEqual(cart, fakeCart);
+});
+
+// test('addItem should increment the qty of item in cart by one', (expect) => {
+//     //arrange
+//     //act
+//     //assert
+// });

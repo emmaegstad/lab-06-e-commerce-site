@@ -49,3 +49,18 @@ export function updateOrderTotal() {
     const orderTotalText = document.getElementById('order-total');
     orderTotalText.textContent = toUSD(calcOrderTotal(cart, products));
 }
+export function getCart() {
+    const cartString = localStorage.getItem('CART') || '[]';
+    const cart = JSON.parse(cartString);
+    return cart;
+}
+
+// addItem(id) --> for now it will always increment by 1
+// call getCart()
+// use findById to find a matching a cartItem with the id
+// if cartItem is found, increment qty by 1
+// else create a new cartItem with id and qty = 1
+// stringify the cart back to JSON
+// set the cart to localstorage
+
+// export function addItem(id) {}
