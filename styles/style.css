@@ -91,3 +91,7 @@ button {
     width: 8vw;
     padding: 3px;
 }
+
+.qty-added::before {
+    content: 'Added to Cart: ';
+}

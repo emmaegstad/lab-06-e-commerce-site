@@ -23,13 +23,18 @@ export function renderProduct(product) {
     productButton.classList.add('product-button');
     productButton.id = product.id;
 
+    const qtyAdded = document.createElement('p');
+    qtyAdded.classList.add('qty-added');
+    qtyAdded.textContent = '0';
+
     productCard.append(
         productName,
         img,
         productDesc,
         productCat,
         productPrice,
-        productButton
+        productButton,
+        qtyAdded
     );
     return productCard;
 }

@@ -73,3 +73,9 @@ export function addItem(id) {
 export function clearCart() {
     localStorage.removeItem('CART');
 }
+
+export function updateQtyCount(parentElement) {
+    const elSpan = parentElement.querySelector('.qty-added');
+    let qtyCount = parseFloat(elSpan.textContent);
+    elSpan.textContent = qtyCount + 1;
+}
