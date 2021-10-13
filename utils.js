@@ -49,6 +49,7 @@ export function updateOrderTotal() {
     const orderTotalText = document.getElementById('order-total');
     orderTotalText.textContent = toUSD(calcOrderTotal(cart, products));
 }
+
 export function getCart() {
     const cartString = localStorage.getItem('CART') || '[]';
     const cart = JSON.parse(cartString);
@@ -63,4 +64,15 @@ export function getCart() {
 // stringify the cart back to JSON
 // set the cart to localstorage
 
-// export function addItem(id) {}
+export function addItem(id) {
+    const cart = getCart();
+    const cartItem = findById(id, cart);
+    if (cartItem) {
+        cartItem.qty++;
+    } else {
+        const newItem = { id: id, qty: 1 };
+        cart.push(newItem);
+    }
+    const stringCart = JSON.stringify(cart);
+    localStorage.setItem('CART', stringCart);
+}

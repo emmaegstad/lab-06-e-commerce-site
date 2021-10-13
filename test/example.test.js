@@ -1,7 +1,13 @@
 import { products } from '../banana/products.js';
 import { cart } from '../banana/cart-data.js';
 import { renderProduct } from '../render-product.js';
-import { findById, renderLineItem, calcOrderTotal, getCart } from '../utils.js';
+import {
+    findById,
+    renderLineItem,
+    calcOrderTotal,
+    getCart,
+    addItem,
+} from '../utils.js';
 
 const test = QUnit.test;
 
@@ -76,8 +82,34 @@ test('getCart should return an empty array if no cart exists', (expect) => {
     expect.deepEqual(cart, fakeCart);
 });
 
-// test('addItem should increment the qty of item in cart by one', (expect) => {
-//     //arrange
-//     //act
-//     //assert
-// });
+test('addItem should increment the quantity if item in cart', (expect) => {
+    // arrange
+    const fakeCart = [
+        { id: '1', qty: 2 },
+        { id: '3', qty: 4 },
+    ];
+    localStorage.setItem('CART', JSON.stringify(fakeCart));
+    // act
+    addItem('1');
+    const cart = getCart();
+    const expected = [
+        { id: '1', qty: 3 },
+        { id: '3', qty: 4 },
+    ];
+    // assert
+    expect.deepEqual(cart, expected);
+});
+
+test('addItem should add an item if not already there', (expect) => {
+    //arrange
+    localStorage.removeItem('CART');
+
+    const expected = [{ id: '1', qty: 1 }];
+
+    //act
+    addItem('1');
+    const cart = getCart();
+
+    //assert
+    expect.deepEqual(cart, expected);
+});
