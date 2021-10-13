@@ -1,5 +1,6 @@
-import { cart } from './banana/cart-data.js';
 import { products } from './banana/products.js';
+
+const cart = getCart();
 
 export function findById(id, array) {
     for (let item of array) {
@@ -48,4 +49,33 @@ export function calcOrderTotal(cart, products) {
 export function updateOrderTotal() {
     const orderTotalText = document.getElementById('order-total');
     orderTotalText.textContent = toUSD(calcOrderTotal(cart, products));
+}
+
+export function getCart() {
+    const cartString = localStorage.getItem('CART') || '[]';
+    const cart = JSON.parse(cartString);
+    return cart;
+}
+
+export function addItem(id) {
+    const cart = getCart();
+    const cartItem = findById(id, cart);
+    if (cartItem) {
+        cartItem.qty++;
+    } else {
+        const newItem = { id: id, qty: 1 };
+        cart.push(newItem);
+    }
+    const stringCart = JSON.stringify(cart);
+    localStorage.setItem('CART', stringCart);
+}
+
+export function clearCart() {
+    localStorage.removeItem('CART');
+}
+
+export function updateQtyCount(parentElement) {
+    const elSpan = parentElement.querySelector('.qty-added');
+    let qtyCount = Number(elSpan.textContent);
+    elSpan.textContent = qtyCount + 1;
 }
