@@ -1,5 +1,6 @@
-import { cart } from './banana/cart-data.js';
 import { products } from './banana/products.js';
+
+const cart = getCart();
 
 export function findById(id, array) {
     for (let item of array) {
@@ -56,14 +57,6 @@ export function getCart() {
     return cart;
 }
 
-// addItem(id) --> for now it will always increment by 1
-// call getCart()
-// use findById to find a matching a cartItem with the id
-// if cartItem is found, increment qty by 1
-// else create a new cartItem with id and qty = 1
-// stringify the cart back to JSON
-// set the cart to localstorage
-
 export function addItem(id) {
     const cart = getCart();
     const cartItem = findById(id, cart);
@@ -75,4 +68,8 @@ export function addItem(id) {
     }
     const stringCart = JSON.stringify(cart);
     localStorage.setItem('CART', stringCart);
+}
+
+export function clearCart() {
+    localStorage.removeItem('CART');
 }
