@@ -12,8 +12,8 @@ export function renderProduct(product) {
     const productDesc = document.createElement('p');
     productDesc.textContent = product.description;
 
-    const productCat = document.createElement('p');
-    productCat.textContent = `Category: ${product.category}`;
+    // const productCat = document.createElement('p');
+    // productCat.textContent = `Category: ${product.category}`;
 
     const productPrice = document.createElement('p');
     productPrice.textContent = `$${product.price}.00`;
@@ -31,7 +31,7 @@ export function renderProduct(product) {
         productName,
         img,
         productDesc,
-        productCat,
+        // productCat,
         productPrice,
         productButton,
         qtyAdded

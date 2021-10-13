@@ -76,6 +76,6 @@ export function clearCart() {
 
 export function updateQtyCount(parentElement) {
     const elSpan = parentElement.querySelector('.qty-added');
-    let qtyCount = parseFloat(elSpan.textContent);
+    let qtyCount = Number(elSpan.textContent);
     elSpan.textContent = qtyCount + 1;
 }

@@ -68,7 +68,7 @@ p {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    align-items: flex-start;
+    align-items: stretch;
     gap: 20px;
 }
 
@@ -92,6 +92,18 @@ button {
     padding: 3px;
 }
 
+button:active {
+    box-shadow: 1px 2px #570f01;
+}
+
+.qty-added {
+    font-size: 1.5vh;
+}
+
 .qty-added::before {
     content: 'Added to Cart: ';
+}
+
+footer {
+    height: 10vh;
 }
