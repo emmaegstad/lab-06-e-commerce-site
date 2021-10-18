@@ -1,5 +1,6 @@
-import { products } from './banana/products.js';
+// import { products } from './banana/products.js';
 
+const products = getProducts();
 const cart = getCart();
 
 export function findById(id, array) {
@@ -98,9 +99,25 @@ export function addProduct(newProduct) {
     localStorage.setItem('PRODUCTS', productString);
 }
 
-export function removeProduct(id) {
-    let products = getProducts();
-    products.pop(id);
-    let productString = JSON.stringify(products);
-    localStorage.setItem('PRODUCTS', productString);
-}
+// ------------------------
+
+// export function removeProduct(id) {
+//     let products = getProducts();
+//     products.pop(id);
+//     let productString = JSON.stringify(products);
+//     localStorage.setItem('PRODUCTS', productString);
+// }
+
+// export function renderProductRm(product) {
+//     const lineItem = document.createElement('div');
+//     lineItem.classList.add('rm-product__item');
+//     const productName = document.createElement('p');
+//     productName.classList.add('rm-product__name');
+//     productName.textContent = product.name;
+//     const rmButton = document.createElement('button');
+//     rmButton.classList.add('rm-product__button');
+//     rmButton.textContent = 'x';
+//     rmButton.id = product.id;
+//     lineItem.append(productName, rmButton);
+//     return lineItem;
+// }

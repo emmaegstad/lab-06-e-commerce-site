@@ -1,4 +1,4 @@
-import { addProduct, removeProduct } from '../utils.js';
+import { addProduct } from '../utils.js';
 
 const productForm = document.getElementById('product-entry');
 
@@ -23,7 +23,24 @@ productForm.addEventListener('submit', (event) => {
     productForm.reset();
 });
 
-//render HTML function
-// product name, x button
-//loop through products, adding each existing one to remove list
-//event listener on buttons that remove corresponding item
+// --------------------------
+
+// for (let product of products) {
+//     const lineItem = renderProductRm(product);
+//     rmProductList.append(lineItem);
+// }
+
+// const rmButtons = document.querySelectorAll('.rm-product__button');
+
+// export function removeProduct(id) {
+//     let products = getProducts();
+//     products.pop(id);
+//     let productString = JSON.stringify(products);
+//     localStorage.setItem('PRODUCTS', productString);
+// }
+
+// for (let button of rmButtons) {
+//     button.addEventListener('click', (ev) => {
+//         removeProduct(button.id);
+//     });
+// }
