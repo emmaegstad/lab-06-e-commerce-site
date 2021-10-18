@@ -1,6 +1,5 @@
-import { addProduct, getProducts } from '../utils.js';
+import { addProduct, removeProduct } from '../utils.js';
 
-const products = getProducts();
 const productForm = document.getElementById('product-entry');
 
 productForm.addEventListener('submit', (event) => {
@@ -23,3 +22,8 @@ productForm.addEventListener('submit', (event) => {
 
     productForm.reset();
 });
+
+//render HTML function
+// product name, x button
+//loop through products, adding each existing one to remove list
+//event listener on buttons that remove corresponding item

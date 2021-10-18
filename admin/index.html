@@ -30,46 +30,55 @@
             /></a>
         </header>
         <main>
-            <form id="product-entry">
-                <label id="name"
-                    >Name:
-                    <input type="text" id="name" name="name" />
-                </label>
-                <label id="img"
-                    >Image:
-                    <input type="text" id="img" name="img" />
-                </label>
-                <label id="description"
-                    >Description:
-                    <textarea
-                        name="description"
-                        id="description"
-                        cols="20"
-                        rows="2"
-                    ></textarea>
-                </label>
-                <label id="category"
-                    >Category:
-                    <select name="category" id="category">
-                        <option value="Honey">Honey</option>
-                        <option value="Skincare">Skincare</option>
-                        <option value="Stickers">Stickers</option>
-                    </select>
-                </label>
-                <label id="price"
-                    >Price:
-                    <input type="text" id="price" name="price" />
-                </label>
-                <label id="id"
-                    >ID:
-                    <input type="text" id="id" name="id" />
-                </label>
-                <label id="background"
-                    >Background Color:
-                    <input type="text" id="background" name="background" />
-                </label>
-                <button>Submit</button>
-            </form>
+            <section class="add-product">
+                <h1 class="add-product__title">Add a Product</h1>
+                <form id="product-entry">
+                    <label id="name"
+                        >Name:
+                        <input type="text" id="name" name="name" />
+                    </label>
+                    <label id="img"
+                        >Image:
+                        <input type="text" id="img" name="img" />
+                    </label>
+                    <label id="description"
+                        >Description:
+                        <textarea
+                            name="description"
+                            id="description"
+                            cols="20"
+                            rows="2"
+                        ></textarea>
+                    </label>
+                    <label id="category"
+                        >Category:
+                        <select name="category" id="category">
+                            <option value="Honey">Honey</option>
+                            <option value="Skincare">Skincare</option>
+                            <option value="Stickers">Stickers</option>
+                        </select>
+                    </label>
+                    <label id="price"
+                        >Price:
+                        <input type="text" id="price" name="price" />
+                    </label>
+                    <label id="id"
+                        >ID:
+                        <input type="text" id="id" name="id" />
+                    </label>
+                    <label id="background"
+                        >Background Color:
+                        <input type="text" id="background" name="background" />
+                    </label>
+                    <button>Submit</button>
+                </form>
+            </section>
+            <section class="remove-product">
+                <h1 class="add-product__title">Remove a Product</h1>
+                <form id="product-removal">
+                    <button>Submit</button>
+                </form>
+            </section>
         </main>
         <script type="module" src="./product-entry.js" defer></script>
     </body>

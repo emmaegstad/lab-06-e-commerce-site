@@ -97,3 +97,10 @@ export function addProduct(newProduct) {
     let productString = JSON.stringify(products);
     localStorage.setItem('PRODUCTS', productString);
 }
+
+export function removeProduct(id) {
+    let products = getProducts();
+    products.pop(id);
+    let productString = JSON.stringify(products);
+    localStorage.setItem('PRODUCTS', productString);
+}
