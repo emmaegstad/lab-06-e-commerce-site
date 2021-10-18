@@ -79,3 +79,14 @@ export function updateQtyCount(parentElement) {
     let qtyCount = Number(elSpan.textContent);
     elSpan.textContent = qtyCount + 1;
 }
+
+export function getProducts() {
+    let lsProducts = localStorage.getItem('PRODUCTS');
+    const productList = JSON.parse(lsProducts);
+
+    if (!productList) {
+        const productsString = JSON.stringify(products);
+        localStorage.setItem('PRODUCTS', productsString);
+    }
+    return productList || products;
+}

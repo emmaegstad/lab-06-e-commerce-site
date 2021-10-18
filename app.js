@@ -1,6 +1,7 @@
 import { renderProduct } from './render-product.js';
-import { products } from './banana/products.js';
-import { addItem, updateQtyCount } from './utils.js';
+import { addItem, updateQtyCount, getProducts } from './utils.js';
+
+const products = getProducts();
 
 const productList = document.querySelector('.product-list');
 

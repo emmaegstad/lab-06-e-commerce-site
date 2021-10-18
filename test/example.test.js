@@ -1,4 +1,3 @@
-import { products } from '../banana/products.js';
 import { cart } from '../banana/cart-data.js';
 import { renderProduct } from '../render-product.js';
 import {
@@ -8,9 +7,11 @@ import {
     getCart,
     addItem,
     clearCart,
+    getProducts,
 } from '../utils.js';
 
 const test = QUnit.test;
+const products = getProducts();
 
 test('renderProduct should return HTML element', (expect) => {
     const expected =

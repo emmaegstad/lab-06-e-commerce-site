@@ -4,9 +4,10 @@ import {
     updateOrderTotal,
     getCart,
     clearCart,
+    getProducts,
 } from '../utils.js';
-import { products } from '../banana/products.js';
 
+const products = getProducts();
 const cart = getCart();
 const tbody = document.getElementById('table-body');
 const placeOrder = document.querySelector('.place-order');
