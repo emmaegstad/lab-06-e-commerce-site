@@ -91,4 +91,9 @@ export function getProducts() {
     return productList || products;
 }
 
-export function addProduct() {}
+export function addProduct(newProduct) {
+    let products = getProducts();
+    products.push(newProduct);
+    let productString = JSON.stringify(products);
+    localStorage.setItem('PRODUCTS', productString);
+}

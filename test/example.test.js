@@ -134,7 +134,7 @@ test('clearCart should remove cart items', (expect) => {
     expect.deepEqual(cart, expected);
 });
 
-test('addItem should add a product to the products array', (expect) => {
+test('addProduct should add a product to the products array', (expect) => {
     //arrange
     let products = getProducts();
 
@@ -153,5 +153,5 @@ test('addItem should add a product to the products array', (expect) => {
 
     //assert
     products = getProducts();
-    expect.equal(products.length, 6);
+    expect.equal(products.length, 7);
 });
