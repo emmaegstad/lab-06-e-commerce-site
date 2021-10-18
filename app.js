@@ -1,5 +1,5 @@
 import { renderProduct } from './render-product.js';
-import { addItem, getCart, getProducts, updateQtyCount } from './utils.js';
+import { addItem, getProducts, updateQtyCount } from './utils.js';
 
 const products = getProducts();
 const productList = document.querySelector('.product-list');
