@@ -1,0 +1,18 @@
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    font-family: 'Noto Sans Mono', monospace;
+    padding: 10px;
+    height: 350px;
+    width: 350px;
+    border: 3px #ec2c04 solid;
+    border-radius: 25px;
+}

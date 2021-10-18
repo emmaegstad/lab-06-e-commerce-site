@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Admin</title>
+        <link rel="stylesheet" href="../styles/reset.css" />
+        <link rel="stylesheet" href="../styles/style.css" />
+        <link rel="stylesheet" href="../styles/admin.css" />
+    </head>
+    <body>
+        <div class="top-bar">
+            Local honey and beeswax made with love in Portland, OR |
+            <a href="./index.html" id="admin-link">Admin</a>
+        </div>
+        <header>
+            <a href="../index.html" class="home-link">
+                <img
+                    src="../assets/home-icon.png"
+                    alt="Home page icon"
+                    class="cart icon"
+            /></a>
+            <img class="logo" src="../assets/Logo.png" alt="Bee & Bloom logo" />
+            <a href="../cart/index.html" class="cart-link"
+                ><img
+                    src="../assets/cart-icon.png"
+                    alt="Shopping cart icon"
+                    class="cart icon"
+            /></a>
+        </header>
+        <main>
+            <form id="product-entry">
+                <label id="name"
+                    >Name:
+                    <input type="text" id="name" name="name" />
+                </label>
+                <label id="img"
+                    >Image:
+                    <input type="text" id="img" name="img" />
+                </label>
+                <label id="description"
+                    >Description:
+                    <textarea
+                        name="description"
+                        id="description"
+                        cols="20"
+                        rows="2"
+                    ></textarea>
+                </label>
+                <label id="category"
+                    >Category:
+                    <select name="category" id="category">
+                        <option value="Honey">Honey</option>
+                        <option value="Skincare">Skincare</option>
+                        <option value="Stickers">Stickers</option>
+                    </select>
+                </label>
+                <label id="price"
+                    >Price:
+                    <input type="text" id="price" name="price" />
+                </label>
+                <label id="id"
+                    >ID:
+                    <input type="text" id="id" name="id" />
+                </label>
+                <label id="background"
+                    >Background Color:
+                    <input type="text" id="background" name="background" />
+                </label>
+            </form>
+        </main>
+        <script type="module" src="./product-entry.js" defer></script>
+    </body>
+</html>

@@ -27,6 +27,11 @@
     text-transform: uppercase;
 }
 
+#admin-link {
+    margin-left: 15px;
+    font-weight: bolder;
+}
+
 header {
     display: flex;
     flex-direction: row;
