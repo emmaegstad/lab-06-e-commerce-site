@@ -8,6 +8,7 @@ import {
     addItem,
     clearCart,
     getProducts,
+    addProduct,
 } from '../utils.js';
 
 const test = QUnit.test;
@@ -131,4 +132,26 @@ test('clearCart should remove cart items', (expect) => {
 
     //assert
     expect.deepEqual(cart, expected);
+});
+
+test('addItem should add a product to the products array', (expect) => {
+    //arrange
+    let products = getProducts();
+
+    const newProduct = {
+        name: 'Wildflower Honey, 6oz',
+        img: 'test/assets/wildflower-honey-6oz.jpeg',
+        description: '6oz jar of wildflower honey from Sauvie Island.',
+        category: 'Honey',
+        price: 8,
+        id: '7',
+        background: '64c363',
+    };
+
+    //act
+    addProduct(newProduct);
+
+    //assert
+    products = getProducts();
+    expect.equal(products.length, 6);
 });

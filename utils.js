@@ -90,3 +90,5 @@ export function getProducts() {
     }
     return productList || products;
 }
+
+export function addProduct() {}
