@@ -1,4 +1,4 @@
-const products = getProducts();
+import { products } from '../banana/products.js';
 const cart = getCart();
 
 export function findById(id, array) {
