@@ -1,5 +1,4 @@
-import { products } from './banana/products.js';
-
+import { products } from '../banana/products.js';
 const cart = getCart();
 
 export function findById(id, array) {
@@ -37,10 +36,11 @@ export function renderLineItem(cartItem, productData) {
     return tr;
 }
 
-export function calcOrderTotal(cart, products) {
+export function calcOrderTotal(cart) {
+    let currentProducts = getProducts();
     let orderTotal = 0;
     for (let item of cart) {
-        const product = findById(item.id, products);
+        const product = findById(item.id, currentProducts);
         orderTotal = orderTotal + product.price * item.qty;
     }
     return orderTotal;
@@ -78,4 +78,22 @@ export function updateQtyCount(parentElement) {
     const elSpan = parentElement.querySelector('.qty-added');
     let qtyCount = Number(elSpan.textContent);
     elSpan.textContent = qtyCount + 1;
+}
+
+export function getProducts() {
+    let lsProducts = localStorage.getItem('PRODUCTS');
+    const productList = JSON.parse(lsProducts);
+
+    if (!productList) {
+        const productsString = JSON.stringify(products);
+        localStorage.setItem('PRODUCTS', productsString);
+    }
+    return productList || products;
+}
+
+export function addProduct(newProduct) {
+    let products = getProducts();
+    products.push(newProduct);
+    let productString = JSON.stringify(products);
+    localStorage.setItem('PRODUCTS', productString);
 }

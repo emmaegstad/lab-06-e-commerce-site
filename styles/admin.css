@@ -1,0 +1,62 @@
+main {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+h1 {
+    font-family: 'EB Garamond', serif;
+}
+
+button {
+    align-self: center;
+}
+
+.add-product {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+form,
+.rm-product__list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    font-family: 'Noto Sans Mono', monospace;
+    font-size: 1.5vh;
+    font-weight: bolder;
+    padding: 10px;
+    min-height: 350px;
+    width: 350px;
+    border: 3px #ec2c04 solid;
+    border-radius: 25px;
+}
+
+.rm-product {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.rm-product__item {
+    display: flex;
+    align-items: flex-start;
+    font-size: 1.5vh;
+    justify-content: space-between;
+}
+
+.rm-product__name {
+    font-family: 'Noto Sans Mono', monospace;
+    font-size: 1.5vh;
+}
+
+.rm-product__button {
+    font-size: 8px;
+    width: 15px;
+    height: 15px;
+}
