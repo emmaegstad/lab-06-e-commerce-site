@@ -1,4 +1,4 @@
-import { products } from '../banana/products.js';
+const products = getProducts();
 const cart = getCart();
 
 export function findById(id, array) {
@@ -88,11 +88,4 @@ export function getProducts() {
         localStorage.setItem('PRODUCTS', productsString);
     }
     return productList || products;
-}
-
-export function addProduct(newProduct) {
-    let products = getProducts();
-    products.push(newProduct);
-    let productString = JSON.stringify(products);
-    localStorage.setItem('PRODUCTS', productString);
 }
