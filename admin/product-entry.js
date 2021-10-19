@@ -20,5 +20,5 @@ productForm.addEventListener('submit', (event) => {
     addProduct(newProduct);
     alert('New product added!');
 
-    // productForm.reset();
+    productForm.reset();
 });
