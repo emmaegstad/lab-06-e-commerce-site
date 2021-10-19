@@ -36,10 +36,11 @@ export function renderLineItem(cartItem, productData) {
     return tr;
 }
 
-export function calcOrderTotal(cart, products) {
+export function calcOrderTotal(cart) {
+    let currentProducts = getProducts();
     let orderTotal = 0;
     for (let item of cart) {
-        const product = findById(item.id, products);
+        const product = findById(item.id, currentProducts);
         orderTotal = orderTotal + product.price * item.qty;
     }
     return orderTotal;
@@ -88,4 +89,11 @@ export function getProducts() {
         localStorage.setItem('PRODUCTS', productsString);
     }
     return productList || products;
+}
+
+export function addProduct(newProduct) {
+    let products = getProducts();
+    products.push(newProduct);
+    let productString = JSON.stringify(products);
+    localStorage.setItem('PRODUCTS', productString);
 }
